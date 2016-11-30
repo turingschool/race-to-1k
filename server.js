@@ -10,6 +10,9 @@ var mongoose = require('mongoose')
 var students = require('./routes/students')
 var Student = require('./models/student')
 
+var GITHUB_CLIENT_ID = "6611d7cd2c014c4a4303"
+var GITHUB_CLIENT_SECRET = "2349ab5325c9bd504d4f77a698bfe7af8e6f65ad"
+
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
