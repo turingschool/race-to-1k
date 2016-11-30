@@ -74,7 +74,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + 'public'))
 app.use('/students', ensureAuthenticated, students)
-// app.use('/auth', auth)
 
 //Configure DB
 // var dbName = 'studentDB';
@@ -90,11 +89,16 @@ app.locals.title = "Race to 1k"
 
 
 app.get('/', function(req, res){
+  const { user } = req
+    if(req.user) {
+      Student.findOne({githubId: user.githubId}, function(err, student) {
+        if (err) {
+          res.send(err)
+        }
+      res.render('points', { student });
+    })
+  }
   res.render('index', { student: null });
-});
-
-app.get('/login', function(req, res){
-  res.render('login', { student: null });
 });
 
 app.get('/auth/github',

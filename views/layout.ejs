@@ -4,17 +4,14 @@
 		<title>Race to 1k</title>
 	</head>
 	<body>
-		<% if (!student) { %>
-			<p>
-			<a href="/">Home</a> |
-			<a href="/login">Log In</a>
-			</p>
-		<% } else { %>
-			<p>
-			<a href="/">Home</a> |
-			<a href="/students/points">Points</a> |
-			<a href="/logout">Log Out</a>
-			</p>
+		<% if (student) { %>
+			<div class="header">
+				<p>
+				<a href="/">Home</a> |
+				<a href="/students/points">Points</a> |
+				<a href="/logout">Log Out</a>
+				</p>
+			</div>
 		<% } %>
 		<%- body %>
 	</body>
