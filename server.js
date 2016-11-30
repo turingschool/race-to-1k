@@ -40,8 +40,20 @@ passport.use(new GitHubStrategy({
              student = new Student({
                 githubId: profile.id,
                 name: profile.displayName,
+                githubName: profile._json.login,
+                avatarUrl: profile._json.avatar_url,
                 cohort: "1606",
-                score: 0
+                intermission: 0,
+                nodeProject: 0,
+                electronProject: 0,
+                reactNativeProject: 0,
+                capstoneProject: 0,
+                dangerousDenver: 0,
+                mockAssessment: 0,
+                homework: 0,
+                studentLedSession: 0,
+                finalAssessment: 0,
+                extraCredit: 0,
              });
              student.save(function(err) {
                  if (err) console.log(err);
@@ -77,23 +89,11 @@ app.locals.title = "Race to 1k"
 
 
 app.get('/', function(req, res){
-  const { user } = req
-    if(user) {
-      Student.findOne({githubId: user.githubId}, function(err, student) {
-        res.redirect('/students/account', { student });
-      })
-    }
-    res.render('index', { student: null });
+  res.render('index', { student: null });
 });
 
 app.get('/login', function(req, res){
-  const { user } = req
-    if(user) {
-      Student.findOne({githubId: user.githubId}, function(err, student) {
-        res.redirect('/students/account', { student });
-      })
-    }
-    res.render('login', { student: null });
+  res.render('login', { student: null });
 });
 
 app.get('/auth/github',
