@@ -33,13 +33,8 @@ router.get('/points', ensureStudent, function(req, res){
     if (err) {
       res.send(err)
     }
-    let { intermission, nodeProject, electronProject, reactNativeProject
-        , capstoneProject, dangerousDenver, mockAssessment, homework
-        , studentLedSession, finalAssessment, extraCredit } = student
-
-    let totalPoints = intermission + nodeProject + electronProject + reactNativeProject
-         + capstoneProject + dangerousDenver + mockAssessment
     // res.render(view, locals)
+    let totalPoints = getTotalPoints(student)
     res.render('points', { student, totalPoints });
   })
 });
@@ -49,7 +44,8 @@ router.get('/:id', ensureTeacher, function(req, res){
     if (err) {
       res.send(err)
     }
-    res.render('points', { student });
+    let totalPoints = getTotalPoints(student)
+    res.render('points', { student, totalPoints });
   })
 });
 
@@ -93,6 +89,17 @@ function ensureStudent(req, res, next) {
   const { user } = req
   if ((sixteenOhSix.indexOf(user.githubName) > -1)) { return next(); }
   res.redirect('/')
+}
+
+function getTotalPoints(student) {
+  let { intermission, nodeProject, electronProject, reactNativeProject
+      , capstoneProject, dangerousDenver, mockAssessment, homework
+      , studentLedSession, finalAssessment, extraCredit } = student
+
+  let totalPoints = intermission + nodeProject + electronProject + reactNativeProject
+       + capstoneProject + dangerousDenver + mockAssessment
+
+  return totalPoints
 }
 
 module.exports = router;
