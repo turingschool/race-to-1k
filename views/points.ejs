@@ -1,16 +1,28 @@
-<p>Name: <%= student.name %></p>
-<p>Cohort: <%= student.cohort %></p>
-<img src="<%= student.avatarUrl %>" />
-<p>Intermission homework points: <%= student.intermission %></p>
-<p>Jet Fuel points: <%= student.nodeProject %></p>
-<p>Imposter points: <%= student.electronProject %></p>
-<p>React Native points: <%= student.reactNativeProject %></p>
-<p>Capstone points: <%= student.capstoneProject %></p>
-<p>Dangerous Denver points: <%= student.dangerousDenver %></p>
-<p>Mock assessment points: <%= student.mockAssessment %></p>
-<p>Homework points: <%= student.homework %></p>
-<p>Student led session points: <%= student.studentLedSession %></p>
-<p>Final assessment points: <%= student.finalAssessment %></p>
-<p>Extra credit points: <%= student.extraCredit %></p>
-
-<p>Total points: <%= totalPoints %> / 1000</p>
+<div class="container">
+  <div class="student-info">
+    <h2><%= student.name %></h2>
+    <h3><%= student.cohort %></h3>
+    <img class="avatar" src="<%= student.avatarUrl %>" />
+    <h3>Total points: <%= totalPoints %> / 1000</h3>
+  </div>
+  <div class="projects">
+    <h2>Projects</h2>
+    <p>Jet Fuel points: <%= student.nodeProject %></p>
+    <p>Imposter points: <%= student.electronProject %></p>
+    <p>React Native points: <%= student.reactNativeProject %></p>
+    <p>Capstone points: <%= student.capstoneProject %></p>
+  </div>
+  <div class="homework">
+    <h2>Homework</h2>
+    <p>Intermission homework points: <%= student.intermission %></p>
+    <p>Dangerous Denver points: <%= student.dangerousDenver %></p>
+    <p>Homework points: <%= student.homework %></p>
+    <p>Student led session points: <%= student.studentLedSession %></p>
+    <p>Extra credit points: <%= student.extraCredit %></p>
+  </div>
+  <div class="assessments">
+    <h2>Assessments</h2>
+    <p>Mock assessment points: <%= student.mockAssessment %></p>
+    <p>Final assessment points: <%= student.finalAssessment %></p>
+  </div>
+</div>

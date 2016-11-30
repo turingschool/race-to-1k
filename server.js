@@ -23,6 +23,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    // callbackURL: "http://localhost:3000/auth/github/callback"
     callbackURL: "https://race-to-1k.herokuapp.com/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
@@ -72,7 +73,8 @@ app.use(bodyParser.json())
 app.use(require('body-parser').urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(__dirname + 'public'))
+app.use('/public', express.static(__dirname + '/public'));
+// Authenticate students
 app.use('/students', ensureAuthenticated, students)
 
 //Configure DB
