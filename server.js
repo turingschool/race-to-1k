@@ -9,7 +9,6 @@ var partials = require('express-partials')
 var mongoose = require('mongoose')
 var students = require('./routes/students')
 var Student = require('./models/student')
-// var auth = require('./routes/auth')
 
 var GITHUB_CLIENT_ID = "6611d7cd2c014c4a4303";
 var GITHUB_CLIENT_SECRET = "2349ab5325c9bd504d4f77a698bfe7af8e6f65ad";
@@ -108,11 +107,6 @@ app.get('/auth/github',
     // function will not be called.
   });
 
-// GET /auth/github/callback
-//   Use passport.authenticate() as route middleware to authenticate the
-//   request.  If authentication fails, the user will be redirected back to the
-//   login page.  Otherwise, the primary route function will be called,
-//   which, in this example, will redirect the user to the home page.
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
