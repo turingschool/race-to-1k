@@ -1,0 +1,28 @@
+{
+  "name": "mod4-points",
+  "version": "1.0.0",
+  "description": "Keep track of FE Mod4 students",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha"
+  },
+  "author": "Alex Tideman",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "debug": "~2.2.0",
+    "ejs": "~2.5.2",
+    "express": "~4.14.0",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.14.2",
+    "method-override": "^2.3.7",
+    "mongoose": "^4.7.0",
+    "passport-github2": "^0.1.10",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
+  }
+}
