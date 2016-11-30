@@ -60,6 +60,7 @@ router.get('/:id/edit', ensureTeacher, function(req, res){
 
 
 router.put('/:id', function(req, res){
+  const { id } = req.params
   Student.findOne({githubId: req.params.id}, function(err, student) {
     if (err) {
       res.send(err)
@@ -68,16 +69,13 @@ router.put('/:id', function(req, res){
       student[prop] = req.body[prop]
     }
 
-    // Save the dinosaur
     student.save(function(err) {
       if (err) {
         res.send(err)
       }
-      res.redirect('/all_points');
     })
   })
-});
-
+})
 
 function ensureTeacher(req, res, next) {
   const { user } = req

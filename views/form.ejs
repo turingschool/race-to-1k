@@ -1,5 +1,5 @@
 <h3>Update <%= student.name %>'s points</h3>
-<form action='/students/<%= student.githubId %>' method="PUT">
+<div class="form" data-id=<%= student.githubId %> >
   <label>Intermission homework</label>
   <input type="text" placeholder="<%= student.intermission %>" name="intermission"><br />
   <label>Node Project</label>
@@ -23,5 +23,5 @@
   <label>Extra Credit</label>
   <input type="text" placeholder="<%= student.extraCredit %>" name="extraCredit"><br />
 
-  <button type="submit">Submit</button>
-</form>
+  <button id="submit">Submit</button>
+</div>
