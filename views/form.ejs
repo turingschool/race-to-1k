@@ -1,7 +1,27 @@
 <h3>Update <%= student.name %>'s points</h3>
 <form action='/students/<%= student.githubId %>' method="PUT">
-  <input type="text" placeholder="intermission" name="intermission">
-  <input type="text" placeholder="Node Project" name="nodeProject">
-  <input type="text" placeholder="Electron Project" name="electronProject">
+  <label>Intermission homework</label>
+  <input type="text" placeholder="<%= student.intermission %>" name="intermission">
+  <label>Node Project</label>
+  <input type="text" placeholder="<%= student.nodeProject %>" name="nodeProject">
+  <label>Electron Project</label>
+  <input type="text" placeholder="<%= student.electronProject %>" name="electronProject">
+  <label>React Native Project</label>
+  <input type="text" placeholder="<%= student.reactNativeProject %>" name="reactNativeProject">
+  <label>Capstone Project</label>
+  <input type="text" placeholder="<%= student.capstoneProject %>" name="capstoneProject">
+  <label>Dangerous Denver</label>
+  <input type="text" placeholder="<%= student.dangerousDenver %>" name="dangerousDenver">
+  <label>Mock Assessment</label>
+  <input type="text" placeholder="<%= student.mockAssessment %>" name="mockAssessment">
+  <label>Homework</label>
+  <input type="text" placeholder="<%= student.homework %>" name="homework">
+  <label>Student Led Session</label>
+  <input type="text" placeholder="<%= student.studentLedSession %>" name="studentLedSession">
+  <label>Final Assessment</label>
+  <input type="text" placeholder="<%= student.finalAssessment %>" name="finalAssessment">
+  <label>Extra Credit</label>
+  <input type="text" placeholder="<%= student.extraCredit %>" name="extraCredit">
+
   <button type="submit">Submit</button>
 </form>
