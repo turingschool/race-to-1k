@@ -44,6 +44,15 @@ router.get('/:id', ensureTeacher, function(req, res){
     if (err) {
       res.send(err)
     }
+    res.render('points', { student });
+  })
+});
+
+router.get('/:id/edit', ensureTeacher, function(req, res){
+  Student.findOne({githubId: req.params.id}, function(err, student) {
+    if (err) {
+      res.send(err)
+    }
     res.render('form', { student });
   })
 });
