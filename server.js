@@ -24,8 +24,8 @@ passport.deserializeUser(function(user, done) {
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/callback"
-    // callbackURL: "https://race-to-1k.herokuapp.com/auth/github/callback"
+    // callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: "https://race-to-1k.herokuapp.com/auth/github/callback"
   },
   function(accessToken, refreshToken, profile, done) {
      Student.findOne({
