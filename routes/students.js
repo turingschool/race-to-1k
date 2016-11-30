@@ -33,9 +33,14 @@ router.get('/points', ensureStudent, function(req, res){
     if (err) {
       res.send(err)
     }
+    let { intermission, nodeProject, electronProject, reactNativeProject
+        , capstoneProject, dangerousDenver, mockAssessment, homework
+        , studentLedSession, finalAssessment, extraCredit } = student
 
+    let totalPoints = intermission + nodeProject + electronProject + reactNativeProject
+         + capstoneProject + dangerousDenver + mockAssessment
     // res.render(view, locals)
-    res.render('points', { student });
+    res.render('points', { student, totalPoints });
   })
 });
 
