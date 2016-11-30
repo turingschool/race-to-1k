@@ -5,7 +5,7 @@ var Student = require('../models/student')
 var sixteenOhSix = ["ab255","kccrs","Jeff-Duke", "bcgodfrey91","bretthev"
                     ,"madison-kerndt","david-kerr","kylem038","07nguyenpaul"
                     ,"sikemausa","Peter-Springer","swanie21","mjvalade"
-                    ,"blake-worsley","Alex-Tideman"]
+                    ,"blake-worsley","Alex-Tideman","stevekinney"]
 
 router.use(methodOverride('X-HTTP-Method-Override'))
 router.use(methodOverride('_method'))
@@ -33,7 +33,7 @@ router.get('/points', ensureStudent, function(req, res){
     if (err) {
       res.send(err)
     }
-    
+
     // res.render(view, locals)
     res.render('points', { student });
   })
