@@ -115,7 +115,7 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   function(req, res) {
-    if ((teachers.indexOf(user.githubName) > -1)) {
+    if ((teachers.indexOf(req.user.githubName) > -1)) {
       res.redirect('/students');
     }
     res.redirect('/students/points');
