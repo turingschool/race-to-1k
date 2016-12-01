@@ -5,7 +5,8 @@ var Student = require('../models/student')
 var sixteenOhSix = ["ab255","kccrs","Jeff-Duke", "bcgodfrey91","bretthev"
                     ,"madison-kerndt","david-kerr","kylem038","07nguyenpaul"
                     ,"sikemausa","Peter-Springer","swanie21","mjvalade"
-                    ,"blake-worsley","Alex-Tideman","stevekinney"]
+                    ,"blake-worsley","Alex-Tideman","stevekinney","brittanystoroz"]
+var teachers = ["stevekinney","brittanystoroz","Alex-Tideman"]
 
 router.use(methodOverride('X-HTTP-Method-Override'))
 router.use(methodOverride('_method'))
@@ -80,7 +81,7 @@ router.put('/:id', function(req, res){
 
 function ensureTeacher(req, res, next) {
   const { user } = req
-  if (user.githubId === "7967403") { return next(); }
+  if ((teachers.indexOf(user.githubName) > -1)) { return next(); }
   res.redirect('/')
 }
 
