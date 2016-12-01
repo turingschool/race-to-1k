@@ -82,7 +82,7 @@ router.put('/:id', function(req, res){
 function ensureTeacher(req, res, next) {
   const { user } = req
   if ((teachers.indexOf(user.githubName) > -1)) { return next(); }
-  res.redirect('/')
+  res.redirect('/students/points')
 }
 
 function ensureStudent(req, res, next) {
