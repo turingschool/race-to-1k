@@ -1,7 +1,7 @@
 <ul class="students">
   <% for(var i=0; i<students.length; i++) {%>
     <li class="student">
-      <span><%= students[i].githubName %>
+      <span><%= students[i].name %>
       </span><br />
       <a href="/students/<%= students[i].githubId %>">View</a>
       <a href="/students/<%= students[i].githubId %>/edit">Edit</a>
