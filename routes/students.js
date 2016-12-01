@@ -97,7 +97,8 @@ function getTotalPoints(student) {
       , studentLedSession, finalAssessment, extraCredit } = student
 
   let totalPoints = intermission + nodeProject + electronProject + reactNativeProject
-       + capstoneProject + dangerousDenver + mockAssessment
+       + capstoneProject + dangerousDenver + mockAssessment + homework
+       + studentLedSession + finalAssessment + extraCredit
 
   return totalPoints
 }
