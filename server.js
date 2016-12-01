@@ -10,6 +10,7 @@ var partials = require('express-partials')
 var mongoose = require('mongoose')
 var students = require('./routes/students')
 var Student = require('./models/student')
+var teachers = ["stevekinney","brittanystoroz","Alex-Tideman"]
 
 passport.serializeUser(function(user, done) {
   done(null, user);
@@ -114,6 +115,9 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   function(req, res) {
+    if ((teachers.indexOf(user.githubName) > -1)) {
+      res.redirect('/students');
+    }
     res.redirect('/students/points');
   });
 
