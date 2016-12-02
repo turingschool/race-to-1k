@@ -16,10 +16,23 @@ a {
   border: 1px solid black;
 }
 
-.avatar {
+.students {
+  position: relative;
+}
+
+.student {
+  text-align: center;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  float: left;
+  margin: 20px;
+}
+
+.view-all-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .student-info, .projects, .homework, .assessments {
@@ -27,6 +40,12 @@ a {
   float: left;
   display: inline;
   width: 25%;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 .student-info {

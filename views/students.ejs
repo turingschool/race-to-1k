@@ -1,10 +1,9 @@
-<ul class="students">
+<div class="students">
   <% for(var i=0; i<students.length; i++) {%>
-    <li class="student">
-      <span><%= students[i].githubName %>
-      </span><br />
+    <section class="student">
+      <img class="view-all-avatar" src="<%= students[i].avatarUrl %>" />
       <a href="/students/<%= students[i].githubId %>">View</a>
       <a href="/students/<%= students[i].githubId %>/edit">Edit</a>
-    </li>
+    </section>
   <% } %>
-</ul>
+</div>
