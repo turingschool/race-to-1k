@@ -3,7 +3,7 @@ var methodOverride = require('method-override')
 var router = express.Router();
 var Student = require('../models/student')
 var sixteenOhSix = ["ab255","kccrs","Jeff-Duke", "bcgodfrey91","bretthev"
-                    ,"madison-kerndt","david-kerr","kylem038","07nguyenpaul"
+                    ,"madison-kerndt","kerrd89","kylem038","07nguyenpaul"
                     ,"sikemausa","Peter-Springer","swanie21","mjvalade","Casey1449"
                     ,"blake-worsley","Alex-Tideman","stevekinney","brittanystoroz"]
 var teachers = ["stevekinney","brittanystoroz","Alex-Tideman"]
