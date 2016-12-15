@@ -1,5 +1,5 @@
 {
-  "name": "Race to 1K",
+  "name": "race-to-1k",
   "version": "1.0.0",
   "description": "Keep track of FE Mod4 students",
   "main": "server.js",

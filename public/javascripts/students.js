@@ -1,14 +1,14 @@
 $( document ).ready(function() {
   $("#submit").on( "click", function( event ) {
-    let points = {}
+    let points = {};
     $("input").map((i, e) => {
       if(e.value === "") {
-        points[e.name] = e.placeholder
+        points[e.name] = e.placeholder;
       } else {
-        points[e.name] = parseInt(e.value)
+        points[e.name] = parseInt(e.value);
       }
-    })
-    let id = $('.form').attr("data-id")
+    });
+    let id = $('.form').attr("data-id");
     $.ajax({
             url: `/students/${id}`,
             type: 'PUT',
@@ -17,6 +17,6 @@ $( document ).ready(function() {
             success: function(result) {
               window.location.href = `/students/${id}`;
             }
-        })
+        });
   });
 });
