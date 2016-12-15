@@ -1,5 +1,5 @@
 {
-  "name": "mod4-points",
+  "name": "Race to 1K",
   "version": "1.0.0",
   "description": "Keep track of FE Mod4 students",
   "main": "server.js",
