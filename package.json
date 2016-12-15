@@ -1,7 +1,7 @@
 {
   "name": "race-to-1k",
   "version": "1.0.0",
-  "description": "Keep track of FE Mod4 students",
+  "description": "Keep track of FE Mod4 student points",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
