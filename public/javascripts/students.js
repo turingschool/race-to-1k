@@ -1,6 +1,6 @@
 $( document ).ready(function() {
   $("#submit").on( "click", function( event ) {
-    let points = {}
+    let points = {};
     $("input").map((i, e) => {
       if(e.value === "") {
         points[e.name] = e.placeholder;
