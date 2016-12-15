@@ -6,3 +6,14 @@ test:
   override:
     - npm run lint
     - npm run test
+
+deployment:
+  staging:
+    branch: staging
+    heroku:
+      appname: race-to-1k-staging
+
+  production:
+    branch: master
+    heroku:
+      appname: race-to-1k-production
